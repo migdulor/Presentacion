@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Transformación Digital en Refinería del Norte S.A.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F2F5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-line {
+            width: 2px;
+            background-color: #444E86;
+            height: 3rem;
+            margin: 0 auto;
+        }
+        .flowchart-item {
+            border-left: 4px solid #FFA600;
+        }
+        .flowchart-icon {
+            background-color: #FFA600;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#003F5C] uppercase tracking-wide">Transformación Digital</h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#444E86] mt-2">Refinería del Norte S.A.</h2>
+            <p class="mt-4 text-lg max-w-3xl mx-auto text-gray-600">Entorno integrado Web de aplicaciones que revoluciona la gestión de Cuentas Corrientes, Pedidos y Límites de Crédito.</p>
+        </header>
+
+        <section id="problemas" class="my-16">
+            <h3 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">El Desafío: Procesos Manuales y Descentralizados</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#DD5182]">
+                    <h4 class="font-bold text-xl mb-2 text-[#DD5182]">Gestión de Cuentas Corrientes</h4>
+                    <p class="text-gray-600">&#128181; Dependencia de Excel, inconsistencias y alto riesgo de error humano.</p>
+                    <p class="text-gray-600">&#9203; Demoras significativas en los cierres contables mensuales.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#FF6E54]">
+                    <h4 class="font-bold text-xl mb-2 text-[#FF6E54]">Gestión de Pedidos</h4>
+                    <p class="text-gray-600">&#128231; Pedidos por email y teléfono, sin un canal centralizado.</p>
+                    <p class="text-gray-600">&#128270; Falta de trazabilidad y comunicación ineficiente entre departamentos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#FFA600]">
+                    <h4 class="font-bold text-xl mb-2 text-[#FFA600]">Límites de Crédito</h4>
+                    <p class="text-gray-600">&#128221; Proceso 100% manual con alto riesgo de pérdida de documentación.</p>
+                    <p class="text-gray-600">&#128337; Demoras en autorizaciones que impactaban la agilidad comercial.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucion" class="my-20 bg-white p-8 rounded-xl shadow-xl">
+            <h3 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">La Solución: Un Portal Integrado</h3>
+            <div class="flex flex-col md:flex-row items-center justify-around gap-8">
+                <div class="relative text-center order-first md:order-none">
+                     <div class="bg-[#444E86] text-white p-6 rounded-lg shadow-2xl">
+                        <h4 class="text-2xl font-black">PORTAL WEB</h4>
+                        <p class="font-semibold">Automatización y Control</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#003F5C] text-white w-40 h-40 rounded-full flex items-center justify-center shadow-lg mx-auto">
+                        <span class="text-xl font-bold">APYCO</span>
+                    </div>
+                    <p class="mt-4 font-semibold">Cuentas Corrientes</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#955196] text-white w-40 h-40 rounded-full flex items-center justify-center shadow-lg mx-auto">
+                        <span class="text-xl font-bold">SIGEPE</span>
+                    </div>
+                    <p class="mt-4 font-semibold">Pedidos</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#DD5182] text-white w-40 h-40 rounded-full flex items-center justify-center shadow-lg mx-auto">
+                        <span class="text-xl font-bold">LC</span>
+                    </div>
+                    <p class="mt-4 font-semibold">Límites de Crédito</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="flujo" class="my-20">
+            <h3 class="text-3xl font-bold text-center mb-4 text-[#003F5C]">Flujo Operativo de Pedidos: SIGEPE en Acción</h3>
+             <p class="text-center text-lg max-w-3xl mx-auto text-gray-600 mb-12">Desde la solicitud del cliente hasta la salida de planta, cada paso es ahora visible, automático y eficiente.</p>
+            <div class="max-w-3xl mx-auto">
+                <div class="flex items-start flowchart-item bg-white p-4 rounded-lg shadow-md mb-4">
+                    <div class="flowchart-icon mr-4">&#128187;</div>
+                    <div>
+                        <h5 class="font-bold text-lg text-[#003F5C]">1. Carga del Pedido</h5>
+                        <p class="text-gray-700"><span class="font-semibold">Actor:</span> Cliente. <br>El cliente ingresa su pedido a través del nuevo portal web, de forma autónoma y sencilla.</p>
+                    </div>
+                </div>
+                <div class="flowchart-line"></div>
+                <div class="flex items-start flowchart-item bg-white p-4 rounded-lg shadow-md mb-4">
+                     <div class="flowchart-icon mr-4">&#129528;</div>
+                    <div>
+                        <h5 class="font-bold text-lg text-[#003F5C]">2. Validación Automática</h5>
+                        <p class="text-gray-700"><span class="font-semibold">Actor:</span> Sistema (SIGEPE, APYCO, LC). <br>El sistema valida reglas de negocio, saldo en cuenta corriente y límite de crédito en tiempo real.</p>
+                    </div>
+                </div>
+                <div class="flowchart-line"></div>
+                 <div class="flex items-start flowchart-item bg-white p-4 rounded-lg shadow-md mb-4">
+                     <div class="flowchart-icon mr-4">&#128666;</div>
+                    <div>
+                        <h5 class="font-bold text-lg text-[#003F5C]">3. Asignación y Logística</h5>
+                        <p class="text-gray-700"><span class="font-semibold">Actores:</span> Logística, Comercial. <br>El pedido es autorizado y, si es CIP, Logística asigna un transporte. El pedido se transmite al sistema de carga (TRUCK).</p>
+                    </div>
+                </div>
+                 <div class="flowchart-line"></div>
+                <div class="flex items-start flowchart-item bg-white p-4 rounded-lg shadow-md mb-4">
+                     <div class="flowchart-icon mr-4">&#128399;</div>
+                    <div>
+                        <h5 class="font-bold text-lg text-[#003F5C]">4. Carga y Facturación</h5>
+                        <p class="text-gray-700"><span class="font-semibold">Actores:</span> Portería, Facturación. <br>Portería valida el ingreso del camión. Al finalizar la carga, se integra con JDEdwards para la facturación automática.</p>
+                    </div>
+                </div>
+                <div class="flowchart-line"></div>
+                <div class="flex items-start flowchart-item bg-white p-4 rounded-lg shadow-md">
+                     <div class="flowchart-icon mr-4">&#127937;</div>
+                    <div>
+                        <h5 class="font-bold text-lg text-[#003F5C]">5. Salida y Notificación</h5>
+                        <p class="text-gray-700"><span class="font-semibold">Actores:</span> Portería, Cliente. <br>Portería controla la documentación y autoriza la salida. El cliente recibe notificaciones en cada etapa clave del proceso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="my-20">
+            <h3 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">Impacto y Beneficios Cuantificables</h3>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl mb-4 text-[#444E86]">Agilidad Operativa</h4>
+                    <div class="chart-container mx-auto h-64 md:h-80"><canvas id="agilityChart"></canvas></div>
+                    <p class="mt-4 text-gray-700 font-semibold">Reducción drástica en los tiempos de ciclo de cada proceso.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl mb-4 text-[#955196]">Precisión y Consistencia</h4>
+                     <div class="chart-container mx-auto h-64 md:h-80"><canvas id="precisionChart"></canvas></div>
+                    <p class="mt-4 text-gray-700 font-semibold">Eliminación de errores manuales y criterios inconsistentes.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl mb-4 text-[#DD5182]">Transparencia Total</h4>
+                    <div class="chart-container mx-auto h-64 md:h-80"><canvas id="transparencyChart"></canvas></div>
+                    <p class="mt-4 text-gray-700 font-semibold">Visibilidad completa del estado de los pedidos para clientes y equipos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="impactoSectorial" class="my-20 bg-white p-8 rounded-xl shadow-xl">
+             <h3 class="text-3xl font-bold text-center mb-4 text-[#003F5C]">Impacto Interdepartamental</h3>
+             <p class="text-center text-lg max-w-3xl mx-auto text-gray-600 mb-12">La automatización no beneficia a un solo área, sino que optimiza la colaboración en toda la organización.</p>
+             <div class="chart-container"><canvas id="sectorImpactChart"></canvas></div>
+        </section>
+
+        <footer class="text-center py-8 mt-12 border-t border-gray-300">
+            <p class="font-bold text-xl text-[#003F5C]">Miguel E. Dulor</p>
+            <p class="text-gray-600">Gracias por su tiempo</p>
+        </footer>
+        
+    </div>
+
+    <script>
+        const colorPalette = ['#003F5C', '#444E86', '#955196', '#DD5182', '#FF6E54', '#FFA600'];
+
+        function wrapLabels(label, maxWidth) {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).length > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine += (currentLine ? ' ' : '') + word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                     labels: {
+                        color: '#374151',
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        const agilityCtx = document.getElementById('agilityChart').getContext('2d');
+        new Chart(agilityCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Tiempo Reducido', 'Tiempo Restante'],
+                datasets: [{
+                    label: 'Agilidad Operativa',
+                    data: [75, 25],
+                    backgroundColor: [colorPalette[1], '#E5E7EB'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4,
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                 cutout: '70%',
+                 plugins: {
+                    ...commonChartOptions.plugins,
+                    legend: { display: false },
+                    title: { display: true, text: '75% de Reducción en Ciclos', font: { size: 16, weight: 'bold'}, color: colorPalette[1] }
+                 }
+            }
+        });
+
+        const precisionCtx = document.getElementById('precisionChart').getContext('2d');
+        new Chart(precisionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Datos Precisos', 'Margen de Error'],
+                datasets: [{
+                    label: 'Precisión de Datos',
+                    data: [95, 5],
+                    backgroundColor: [colorPalette[2], '#E5E7EB'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                cutout: '70%',
+                 plugins: {
+                    ...commonChartOptions.plugins,
+                    legend: { display: false },
+                    title: { display: true, text: '95% de Precisión de Datos', font: { size: 16, weight: 'bold'}, color: colorPalette[2] }
+                 }
+            }
+        });
+
+        const transparencyCtx = document.getElementById('transparencyChart').getContext('2d');
+        new Chart(transparencyCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Trazabilidad Completa'],
+                datasets: [{
+                    label: 'Trazabilidad de Pedidos',
+                    data: [100],
+                    backgroundColor: [colorPalette[3], '#E5E7EB'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                cutout: '70%',
+                 plugins: {
+                    ...commonChartOptions.plugins,
+                    legend: { display: false },
+                    title: { display: true, text: '100% Trazabilidad', font: { size: 16, weight: 'bold'}, color: colorPalette[3] }
+                 }
+            }
+        });
+        
+        const sectorImpactCtx = document.getElementById('sectorImpactChart').getContext('2d');
+        new Chart(sectorImpactCtx, {
+            type: 'bar',
+            data: {
+                labels: ['APYCO (Cuentas Corrientes)', 'SIGEPE (Pedidos)', 'LC (Límites de Crédito)'].map(label => wrapLabels(label, 16)),
+                datasets: [{
+                    label: 'Nº de Sectores Beneficiados',
+                    data: [3, 7, 5],
+                    backgroundColor: [colorPalette[0], colorPalette[4], colorPalette[5]],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                indexAxis: 'y',
+                 scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { display: false },
+                        ticks: { stepSize: 1 }
+                    },
+                    y: {
+                         grid: { display: false }
+                    }
+                },
+                plugins: {
+                    ...commonChartOptions.plugins,
+                    legend: { display: false },
+                    title: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
